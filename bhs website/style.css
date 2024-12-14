@@ -1,0 +1,499 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #000000; /* Existing primary color */
+    --secondary-color: #000000; /* Existing secondary color */
+    --accent-color: #006400; /* Dark green */
+    --text-color: #000000; /* Existing text color */
+    --bg-color: #f7fafc; /* Existing background color */
+    --white: #ffffff; /* Existing white color */
+    --gray-100: #000000; /* Changed gray-100 to black */
+    --gray-200: #000000; /* Changed gray-200 to black */
+    --gray-300: #000000; /* Changed gray-300 to black */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gray-100 {
+    background-color: var(--gray-100);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.hero {
+    background-image: url('Chris Hero Page.Jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+nav {
+    position: relative;
+    z-index: 2;
+    padding: 1rem 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between; /* Aligns logo and nav items */
+    align-items: center; /* Vertically centers items */
+    padding: 1rem 0; /* Adjust padding as needed */
+}
+
+.main-nav {
+    display: flex; /* Ensure the nav items are in a row */
+    align-items: center; /* Vertically center nav items */
+}
+
+.nav-item {
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin-left: 1.5rem; /* Space between nav items */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.nav-item:hover {
+    color: rgba(255, 255, 255, 0.8); /* Hover effect */
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.space-x-6 > * + * {
+    margin-left: 1.5rem;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.bg-brown-500 {
+    background-color: #8b4513;
+}
+
+.hover\:bg-brown-600:hover {
+    background-color: #6f370f;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.aspect-h-9 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mobile-menu {
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.mobile-menu a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    background-color: var(--primary-color);
+}
+
+.calendly-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.calendly-close-overlay {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.calendly-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.calendly-popup-content {
+    height: 630px;
+    width: 100%;
+    min-width: 320px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Section styles */
+#who-we-are, #who-we-serve, #services, #video-demo {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 4rem 0;
+}
+
+#who-we-serve .bg-gray-100, #services .bg-gray-100 {
+    background-color: var(--gray-200);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #d97706;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #1a202c;
+}
+
+/* Utilities */
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+    .md\:flex {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:flex {
+        display: flex;
+    }
+    
+    .md\:hidden {
+        display: none;
+    }
+
+    .md\:text-7xl {
+        font-size: 4.5rem;
+    }
+
+    .md\:flex-row {
+        flex-direction: row;
+    }
+
+    .md\:w-1/2 {
+        width: 50%;
+    }
+
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Additional styles for specific elements */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: var(--accent-color);
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.25rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Set a maximum width for the video */
+    height: 225px; /* Set a specific height to make it shorter (16:9 aspect ratio) */
+    margin: 0 auto; /* Center the video */
+    overflow: hidden; /* Hide overflow */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the iframe take full width */
+    height: 100%; /* Make the iframe take full height */
+    border: 2px solid #333; /* Add a border to maintain the outline */
+    box-sizing: border-box; /* Include border in the element's total width and height */
+}
+
+#who-we-are .subtext {
+    font-size: 1.25rem;  /* Decreased from 1.5rem to 1.25rem */
+}
+
+#who-we-are p:not(.text-4xl) {
+    font-family: 'Arial', sans-serif !important;
+    font-size: 1.25rem;  /* Decreased from 1.5rem to 1.25rem */
+}
+
+#who-we-serve p:not(.text-4xl),
+#services p:not(.text-4xl),
+#video-demo p:not(.text-4xl) {
+    font-family: 'Arial', sans-serif !important;
+    font-size: 1.25rem;
+}
+
+#who-we-serve .md:w-1/2 {
+    padding-right: 2rem; /* Add some padding to the right of the text column */
+}
+
+#who-we-serve p {
+    margin-bottom: 1rem; /* Add some space between paragraphs */
+}
+
+#who-we-serve .md\:w-1\/2 {
+    padding-left: 2rem;
+}
+
+#who-we-serve .image-container {
+    width: 50%;  /* Take up half the width */
+    height: 100%;  /* Full height of the container */
+    overflow: hidden;  /* Prevent image overflow */
+}
+
+#who-we-serve .image-container img {
+    width: 100%;  /* Make image fill the container width */
+    height: 100%;  /* Make image fill the container height */
+    object-fit: cover;  /* Maintain aspect ratio and cover container */
+    display: block;  /* Remove any extra space below image */
+}

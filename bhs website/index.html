@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Business Handyman</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .process-section {
+            width: 100%;
+            padding: 40px 0;
+            background: white;
+        }
+
+        .process-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .process-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 140px;
+            right: 140px;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+
+        .process-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 0 15px;
+        }
+
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .icon-container {
+            background: #e8f4ff;
+            border-color: #0066cc;
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        .step-description {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #000000;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .phone-number {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .process-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-container::before {
+                display: none;
+            }
+
+            .process-step {
+                margin-bottom: 20px;
+            }
+        }
+
+        .icon-wrapper {
+            position: relative;
+            overflow: visible;
+        }
+
+        [data-lucide] {
+            position: relative;
+            z-index: 1;
+            transform-origin: center;
+            transform: scale(1);
+        }
+
+        .process-step {
+            position: relative;
+            overflow: visible;
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div id="home" class="hero" style="background-image: url('images/Chris Hero Page.jpg');">
+        <div class="container mx-auto">
+            <div class="nav-wrapper">
+                <nav class="main-nav hidden md:flex">
+                    <a href="#" class="logo">TheBusinessHandyMan LLC</a> <!-- Logo inside the nav -->
+                    <span class="placeholder-space"></span> <!-- Empty space -->
+                    <a href="#home" class="nav-item">Home</a>
+                    <a href="#who-we-are" class="nav-item">About us</a>
+                    <a href="#who-we-serve" class="nav-item">Who We Serve</a>
+                    <a href="#services" class="nav-item">Services</a>
+                    <a href="#video-demo" class="nav-item">Video Demo</a>
+                    <a href="#contact-us" class="nav-item">Contact Us</a>
+                    </a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <span class="sr-only">Menu</span>
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu hidden">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
+            <a href="#who-we-are" class="block py-2 px-4 text-sm hover:bg-gray-700">About us</a>
+            <a href="#who-we-serve" class="block py-2 px-4 text-sm hover:bg-gray-700">Who We Serve</a>
+            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
+            <a href="#video-demo" class="block py-2 px-4 text-sm hover:bg-gray-700">Video Demo</a>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="text-white text-5xl md:text-7xl font-bold mb-4">Build Your Vision</h1>
+            <h2 class="text-white text-xl mb-8">Understand the numbers that help build your business</p>
+            <h3 class="text-white text-3xl md:text-5xl font-bold mb-2">Call Us Today: 434-623-8824</h3>
+            <h3 class="text-white text-3xl md:text-5xl font-bold">Send Us An Email: Thebusinesshandyman4u@thebusinesshandyman4u.com</h3>
+        </div>
+    </div>
+
+    <section class="bg-white py-16 overflow-x-hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-20">Our Process</h2>
+            
+            <div class="flex flex-nowrap justify-center gap-8 relative mb-20">
+                <!-- Step 1 -->
+                <div class="process-step text-center" style="width: 400px;">
+                    <i data-lucide="phone" 
+                       class="text-black mx-auto mb-4"
+                       style="width: 120px; height: 120px;" 
+                       stroke-width="3"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold">STEP 1: Call Us Today</h3>
+                        <p class="mt-2 text-black font-bold">
+                            Call us or submit a contact request and we'll reach out to you to learn more about your bookkeeping needs.
+                        
+                        </p> <span class="text-black font-bold">434 623 8824</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step text-center" style="width: 400px;">
+                    <i data-lucide="search" 
+                       class="text-black mx-auto mb-4"
+                       style="width: 120px; height: 120px;" 
+                       stroke-width="3"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold">STEP 2: Assess & Estimate</h3>
+                        <p class="mt-2 text-black font-bold">
+                            We'll review all current accounts in depth to determine a timeline and an upfront one-time or monthly estimate.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step text-center" style="width: 400px;">
+                    <i data-lucide="handshake" 
+                       class="text-black mx-auto mb-4"
+                       style="width: 120px; height: 120px;" 
+                       stroke-width="3"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold">STEP 3: We Work Together</h3>
+                        <p class="mt-2 text-black font-bold">
+                            You no longer stress about being prepared for tax season and you know exactly where your money is going.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="who-we-are" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-4xl font-bold mb-4">WHO WE ARE</h2>
+                    <p class="mb-4 text-sm">The Business Handyman helps food entrepreneurs </p> 
+                    <p class="mb-4 text-sm">with in-demand food products manage the numbers in their business.</p>
+                    <p class="mb-4 text-sm">As a VSU agribusiness graduate with five years in the food industry,</p>
+                    <p class="mb-4 text-sm"> I discovered my passion for numbers while working at family-owned businesses in my small hometown. 
+                    <p class="mb-4 text-sm">Today, I combine my academic background and hands-on experience to help minority business owners thrive.</p>
+                </div>
+                <div class="md:w-1-2">
+                    <img src="images/JHeadshot.jpg" alt="Business Handyman headshot" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="who-we-serve" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-4xl font-bold mb-4">WHO WE SERVE</h2>
+                    <p class="mb-4 text-sm">We serve food entrepreneurs stressed by their businesses' day-to-day numbers. By taking care of the numbers inside their business, we allow them to focus on what they do best!</p>
+                    <p class="mb-4 text-sm">Whether you run a restaurant, food truck, or catering service, we got the expertise you need.</p>
+                </div>
+                <div class="md:w-1-2">
+                    <img src="images/Busy Professional 2.0.JPG" alt="Stressed food entrepreneur" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="service-card">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="dollar-sign" class="w-6 h-6 text-green-500 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Pro Forma Projections</h3>
+                    </div>
+                    <p>Need numbers to send to the bank or an investor for funding? We got you!</p>
+                    <p class="font-bold mt-4">What We Do:</p>
+                    <p>Research and document your business costs and expenses</p>
+                    <p>Track all material costs and vendor pricing</p>
+                    <p>Review and calculate your monthly operating expenses</p>
+                    <p>Determine your exact cost per product/service</p>
+                    <p>Establish strategic pricing for profitability</p>
+                    <p>Calculate your break-even point and set sales targets</p>
+                    <p class="service-price">Price: $399</p>
+                    
+                </div>
+                <div class="service-card">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-sky-500 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Monthly Bookkeeping</h3>
+                    </div>
+                    <p>Want to make your business more profitable in their day-to-day operations? We can help!</p>
+                    <p class="font-bold mt-4">What We Do:</p>
+                    <p>Categorize your transactions for your P&L and Schedule C</p>
+                    <p>Reconcile your accounts</p>
+                    <p>Manage your Financial Statements: Profit & Loss, Balance Sheet, Accounts Payable, & Accounts Receivable</p>
+                    <p>Monthly business consultation based on your business needs to enable growth and optimization</p>
+                    <p>Create and Manage Key Metrics to track business performance</p>
+                    <p class="service-price">Price: $300-$800</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- After Services Section -->
+    <section class="bg-white py-16">
+        <style>
+            .comparison-container {
+                max-width: 1000px;
+                margin: 0 auto;
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+                border: 1px solid black;
+            }
+            .comparison-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 25px;
+                border: 2px solid black;
+            }
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 16px;
+                text-align: left;
+                border: 1px solid black;
+            }
+            .comparison-table th {
+                background-color: #006400;
+                color: white;
+                font-weight: 500;
+                border: 1px solid black;
+            }
+            .comparison-table tr:hover {
+                background-color: #f8f9fa;
+            }
+            .comparison-header {
+                font-size: 42px;
+                color: #006400;
+                margin-bottom: 15px;
+                font-weight: 600;
+            }
+            .comparison-tagline {
+                font-size: 18px;
+                color: #000000;
+                margin-bottom: 25px;
+                line-height: 1.5;
+                border-left: 4px solid #006400;
+                padding-left: 15px;
+                margin-top: 15px;
+            }
+            .check {
+                color: #008000;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .x {
+                color: #e74c3c;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .comparison-table td:first-child {
+                font-weight: 500;
+                color: #000000;
+            }
+            .comparison-table tr:nth-child(even) {
+                background-color: #f9fafb;
+            }
+        </style>
+
+        <div class="comparison-container">
+            <div class="comparison-header">Bookkeeper Service Comparison</div>
+            <div class="comparison-tagline">A good bookkeeper doesn't just track your money—they help transform your profits into powerful investments that fuel your business growth.</div>
+            <table class="comparison-table">
+                <tr>
+                    <th style="font-weight: 900;">Service/Capability</th>
+                    <th style="font-weight: 900;">Traditional Bookkeeper</th>
+                    <th style="font-weight: 900;">The Business Handyman</th>
+                </tr>
+                <tr>
+                    <td>Transaction Categorization</td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Account Reconciliation</td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>24/7 Availability</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Financial Modeling</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Budget Creation</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Revenue Projections</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Food Cost Management</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Labor Cost Optimization</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Staffing Analysis</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Cash Flow Management</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Growth Strategy Planning</td>
+                    <td><span class="x">✗</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact-us" class="bg-white py-16">
+        <style>
+            .contact-container {
+                max-width: 1000px;
+                margin: 0 auto;
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+                border: 2px solid #006400;
+            }
+
+            .contact-title {
+                color: #006400;
+                font-size: 32px;
+                margin-bottom: 15px;
+                font-weight: 600;
+                border-bottom: 3px solid #006400;
+                padding-bottom: 10px;
+            }
+
+            .contact-info {
+                color: #2e482e;
+                margin-bottom: 25px;
+                line-height: 1.5;
+                border-left: 4px solid #006400;
+                padding: 15px;
+                background: #f0f8f0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+                background: #f8faf8;
+                padding: 20px;
+                border-radius: 8px;
+                border: 1px solid #e0e8e0;
+            }
+
+            .name-group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .contact-form label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+                color: #006400;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+
+            .required {
+                color: #2e482e;
+                font-size: 0.9em;
+                margin-left: 5px;
+                text-transform: none;
+            }
+
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form textarea {
+                width: 100%;
+                padding: 12px;
+                border: 2px solid #000000;
+                border-radius: 4px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            .contact-form input:focus,
+            .contact-form textarea:focus {
+                outline: none;
+                box-shadow: 0 0 5px rgba(0,100,0,0.2);
+                background-color: #f0f8f0;
+            }
+
+            .submit-button {
+                background-color: #006400;
+                color: white;
+                padding: 16px 48px;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                display: inline-block;
+                min-width: 100px;
+            }
+
+            .submit-button:hover {
+                background-color: #00000000;
+            }
+
+            .sublabel {
+                font-size: 14px;
+                color: #000000;
+                margin-top: 5px;
+                text-transform: none;
+            }
+        </style>
+
+        <div class="contact-container">
+            <h1 class="contact-title">Contact us.</h1>
+            
+            <div class="contact-info">
+                <p>TheBusinessHandyman4u@thebusinesshandyman4u.com</p>
+                <p>434-623-8824</p>
+                <p>706 Second Avenue</p>
+                <p>Lawrenceville, VA 23868</p>
+            </div>
+
+            <form action="https://formspree.io/f/xoqgkgjv" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label>Name <span class="required">(required)</span></label>
+                    <div class="name-group">
+                        <div>
+                            <input type="text" name="firstName" required>
+                            <label class="sublabel">First Name</label>
+                        </div>
+                        <div>
+                            <input type="text" name="lastName" required>
+                            <label class="sublabel">Last Name</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email <span class="required">(required)</span></label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message <span class="required">(required)</span></label>
+                    <textarea name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="video-demo" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Video Demo</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            © 2024 The Business Handyman. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="calendly-widget" class="calendly-overlay" style="display:none;">
+        <div class="calendly-close-overlay">×</div>
+        <div class="calendly-popup">
+            <div class="calendly-popup-content">
+                <!-- Replace with your actual Calendly widget -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/yourusername/30min"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
